@@ -24,20 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar=(Toolbar)findViewById(R.id.toolBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        myDrawer=(DrawerLayout)findViewById(R.id.myDrawer);
-        setNavMenu();
+
 
     }
 
-    private void setNavMenu() {
-        actionBarDrawerToggle=new ActionBarDrawerToggle(this, myDrawer,toolbar, R.string.drawer_open, R.string.drawer_close);
-        //noinspection deprecation
-        myDrawer.setDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-    }
 
     @Override
     public void onBackPressed() {
