@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.appracks.GhostStories.SplashScreen"
+            android:name=".SplashScreen"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -60,8 +60,18 @@
             android:enabled="true" />
 
         <activity
-            android:name="com.appracks.GhostStories.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:name=".All_stories" />
+        <activity android:name=".Story_titles" />
+        <activity android:name=".Full_stories" />
+        <activity android:name=".Favourite_stories" />
+        <activity android:name=".About_us" />
+        <activity
+            android:name=".Rate_us"
+            android:label="@string/title_activity_rate_us"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Videos"></activity>
     </application>
 
 </manifest>

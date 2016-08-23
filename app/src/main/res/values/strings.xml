@@ -9,6 +9,7 @@
     <string name="drawer_open">drawer_open</string>
     <string name="drawer_close">drawer_open</string>
     <string name="title_activity_biography">Biography</string>
+    <string name="title_activity_rate_us">Rate_us</string>
 
 
 </resources>

@@ -9,36 +9,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_ghost"
-        android:gravity="center_vertical"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="140dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_cover"
+                android:scaleType="fitXY"
+                android:src="@drawable/logo_ghostst"/>
+
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginTop="100dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/textPrimary">
 
-        </LinearLayout>
 
         <LinearLayout
+            android:background="@drawable/grid_selector"
+            android:id="@+id/lay_allstories"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="3dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
 
             <TextView
+                android:id="@+id/tv_allstories"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="40sp"
                 android:text="All Stories"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/textPrimary" />
@@ -46,25 +51,24 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/textPrimary">
 
-        </LinearLayout>
 
         <LinearLayout
+            android:background="@drawable/grid_selector"
+            android:id="@+id/lay_favouritestories"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_favstories"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="40sp"
                 android:text="Favourite Stories"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/textPrimary" />
@@ -72,24 +76,23 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/textPrimary">
 
-        </LinearLayout>
         <LinearLayout
+            android:background="@drawable/grid_selector"
+            android:id="@+id/lay_videos"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_horrorvideos"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="40sp"
                 android:text="Horror Videos"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/textPrimary" />
@@ -97,62 +100,53 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/textPrimary">
 
-        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lay_rate"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
+            android:background="@drawable/grid_selector"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_rate"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Rate us"
+                android:textSize="40sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/textPrimary" />
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/textPrimary">
 
-        </LinearLayout>
 
         <LinearLayout
+            android:background="@drawable/grid_selector"
+            android:id="@+id/lay_about"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_about"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="About us"
+                android:textSize="40sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/textPrimary" />
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/textPrimary">
 
         </LinearLayout>
 
