@@ -9,7 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.appracks.GhostStories.R;
-import com.appracks.GhostStories.data_object.Title_Ghost_story;
+import com.appracks.GhostStories.Story_titles;
+import com.appracks.GhostStories.data_object.Ghost;
 
 import java.util.ArrayList;
 
@@ -19,11 +20,11 @@ import java.util.ArrayList;
 public class Adapter_title extends BaseAdapter {
 
     Context context;
-    ArrayList<Title_Ghost_story> title_ghost_stories;
+    ArrayList<Ghost> title_ghost_stories;
 
-    public Adapter_title(Context context, ArrayList<Title_Ghost_story> title_ghost_storyArrayList) {
+    public Adapter_title(Context context, ArrayList<Ghost> title_ghost_stories) {
         this.context = context;
-        this.title_ghost_stories = title_ghost_storyArrayList;
+        this.title_ghost_stories = title_ghost_stories;
     }
 
     @Override
@@ -33,7 +34,7 @@ public class Adapter_title extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return title_ghost_stories.get(position).getTitle();
     }
 
     @Override
@@ -50,7 +51,7 @@ public class Adapter_title extends BaseAdapter {
         TextView tv_title=(TextView)convertView.findViewById(R.id.tv_title);
         Typeface typeface=Typeface.createFromAsset(context.getAssets(),"vampire.ttf");
         tv_title.setTypeface(typeface);
-        Title_Ghost_story title_ghost_story= title_ghost_stories.get(position);
+        Ghost title_ghost_story= title_ghost_stories.get(position);
         tv_title.setText(title_ghost_story.getTitle());
         return convertView;
     }

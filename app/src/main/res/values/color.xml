@@ -6,4 +6,13 @@
     <color name="textColorPrimary">#212121</color>
     <color name="textColorSecondary">#727272</color>
     <color name="textPrimary">#fff</color>
+
+    <color name="categoryPressed">#727272</color>
+    <color name="categoryNormal">#727272</color>
+    <color name="blue">#125972</color>
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+    <color name="btn_pressed">#FF4081</color>
+    <color name="btn_normal">@color/colorPrimary</color>
+    <color name="btn_disable">#FF3F4D1F</color>
 </resources>

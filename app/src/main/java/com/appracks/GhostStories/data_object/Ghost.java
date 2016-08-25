@@ -1,22 +1,26 @@
 package com.appracks.GhostStories.data_object;
 
+import java.io.Serializable;
+
 /**
- * Created by rezwan on 8/22/2016.
+ * Created by rezwan on 8/25/2016.
  */
-public class Title_Ghost_story {
+public class Ghost implements Serializable {
     private int id;
     private String title;
     private String content;
     private String category;
-    private int isBookmarked;
 
-    public Title_Ghost_story(int id, String title, String content, String category, int isBookmarked) {
+    public Ghost(int id, String title, String content, String category) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.category = category;
-        this.isBookmarked = isBookmarked;
     }
+
+
+
+
 
     public int getId() {
         return id;
@@ -48,13 +52,5 @@ public class Title_Ghost_story {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public int getIsBookmarked() {
-        return isBookmarked;
-    }
-
-    public void setIsBookmarked(int isBookmarked) {
-        this.isBookmarked = isBookmarked;
     }
 }

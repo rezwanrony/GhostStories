@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.appracks.GhostStories.adapter.Adapter_category;
 import com.appracks.GhostStories.adapter.Adapter_title;
-import com.appracks.GhostStories.data_object.Title_Ghost_story;
+import com.appracks.GhostStories.data_object.Ghost;
 import com.appracks.GhostStories.database.DB_Manager;
 
 import java.util.ArrayList;
@@ -19,9 +19,10 @@ import java.util.ArrayList;
 public class Story_titles extends AppCompatActivity {
     ListView lv_title;
     String category;
-    ArrayList<Title_Ghost_story>title_ghost_stories;
+    ArrayList<Ghost>title_ghost_stories;
     DB_Manager db_manager;
     Adapter_title adapter_title;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,19 @@ public class Story_titles extends AppCompatActivity {
     }
 
     private void getTitlename(){
-        title_ghost_stories=db_manager.getAllstory(category);
+        title_ghost_stories=db_manager.getAllItem(category);
         adapter_title=new Adapter_title(this,title_ghost_stories);
         lv_title.setAdapter(adapter_title);
+        lv_title.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Ghost ghost=title_ghost_stories.get(position);
+                Intent i=new Intent(Story_titles.this,Full_stories.class);
+                i.putExtra("position", position);
+                i.putExtra("category", category);
+                startActivity(i);
+            }
+        });
 
 
     }

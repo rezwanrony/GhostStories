@@ -71,7 +71,8 @@
             android:name=".Rate_us"
             android:label="@string/title_activity_rate_us"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Videos"></activity>
+        <activity android:name=".Videos" />
+        <activity android:name=".Favouritefullform"></activity>
     </application>
 
 </manifest>

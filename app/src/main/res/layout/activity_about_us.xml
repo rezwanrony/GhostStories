@@ -6,18 +6,69 @@
     tools:context="com.appracks.GhostStories.About_us"
     android:background="@drawable/background_ghost">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/img_cover"
-            android:scaleType="fitXY"
-            android:src="@drawable/logo_ghostst"/>
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textColor="@color/textPrimary"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Thanks for using \nGhost Stories" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/textPrimary"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Current version: 1.0"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/ghoststory"
+                    android:layout_gravity="center_horizontal" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:layout_marginTop="20dp"
+                    android:text="See more apps"
+                    android:onClick="seemore"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:text="rate this application"
+                    android:onClick="ratethis"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
+
+
 
 </RelativeLayout>

@@ -1,11 +1,12 @@
 package com.appracks.GhostStories.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.appracks.GhostStories.data_object.Title_Ghost_story;
+import com.appracks.GhostStories.data_object.Ghost;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,7 +31,7 @@ public class DB_Manager extends SQLiteOpenHelper {
     private static final String FAVOURITE_FIELD = "isfavourite";
 
 
-    public ArrayList<Title_Ghost_story> getAllstory(String category){
+    /*public ArrayList<Title_Ghost_story> getAllstory(String category){
 
         ArrayList<Title_Ghost_story> ghost_storyArrayList=new ArrayList<Title_Ghost_story>();
         cursor=this.database.rawQuery("select title from Ghost where category='"+category+"'",null);
@@ -46,10 +47,122 @@ public class DB_Manager extends SQLiteOpenHelper {
             cursor.close();
         }
         return ghost_storyArrayList;
+    }*/
+
+    /*public ArrayList<Ghost> getAllstory(String category){
+
+        ArrayList<Ghost> ghost_storyArrayList=new ArrayList<Ghost>();
+        Cursor cursor = this.database.query(DATA_TABLE, null, "category=?", new String[]{category}, null, null, null, null);
+        if(cursor.getCount()>0){
+            cursor.moveToFirst();
+            for(int i=0;i<cursor.getCount();i++){
+                int id=cursor.getInt(cursor.getColumnIndex(ID_FIELD));
+                String title=cursor.getString(cursor.getColumnIndex(TITLE_FIELD));
+                String content=cursor.getString(cursor.getColumnIndex(CONTENT_FIELD));
+                String cat=cursor.getString(cursor.getColumnIndex(CATEGORY_FIELD));
+                Ghost title_ghost_story=new Ghost(id,title,content,cat);
+                ghost_storyArrayList.add(title_ghost_story);
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        return ghost_storyArrayList;
+    }*/
+
+    public ArrayList<Ghost> getAllItem(String cat) {
+        ArrayList<Ghost> ghostArrayList = new ArrayList<Ghost>();
+        Cursor cursor = this.database.query(DATA_TABLE, null, "category=?", new String[]{cat}, null, null, null, null);
+
+        if (cursor.getCount() > 0) {
+
+            cursor.moveToFirst();
+            for (int i = 0; i < cursor.getCount(); i++) {
+                String title=cursor.getString(cursor.getColumnIndex(TITLE_FIELD));
+                int id=cursor.getInt(cursor.getColumnIndex(ID_FIELD));
+                String content=cursor.getString(cursor.getColumnIndex(CONTENT_FIELD));
+                String category=cursor.getString(cursor.getColumnIndex(CATEGORY_FIELD));
+                Ghost title_ghost_story=new Ghost(id,title,content,category);
+                ghostArrayList.add(title_ghost_story);
+
+
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        return ghostArrayList;
+    }
+
+    public ArrayList<Ghost> getAllItemBookmarked() {
+        ArrayList<Ghost> ghostArrayList = new ArrayList<Ghost>();
+        Cursor cursor = this.database.query(DATA_TABLE, null,  FAVOURITE_FIELD + "=?", new String[]{ String.valueOf(1)}, null, null, null, null);
+
+        if (cursor.getCount() > 0) {
+
+            cursor.moveToFirst();
+            for (int i = 0; i < cursor.getCount(); i++) {
+                int id=cursor.getInt(cursor.getColumnIndex(ID_FIELD));
+                String title=cursor.getString(cursor.getColumnIndex(TITLE_FIELD));
+                String content=cursor.getString(cursor.getColumnIndex(CONTENT_FIELD));
+                String category=cursor.getString(cursor.getColumnIndex(CATEGORY_FIELD));
+
+                Ghost ghost = new Ghost(id, title, content, category);
+                ghostArrayList.add(ghost);
+
+
+                cursor.moveToNext();
+            }
+
+        }
+        cursor.close();
+        return ghostArrayList;
+    }
+
+    public String getAllBookmark(String title) {
+        String content=null;
+        Cursor cursor = this.database.query(DATA_TABLE, new String[]{CONTENT_FIELD},  TITLE_FIELD + "=?", new String[]{ title}, null, null, null, null);
+
+        if (cursor.getCount() > 0) {
+
+            cursor.moveToFirst();
+            for (int i = 0; i < cursor.getCount(); i++) {
+                content=cursor.getString(cursor.getColumnIndex(CONTENT_FIELD));
+
+
+                cursor.moveToNext();
+            }
+
+        }
+        cursor.close();
+        return content;
+    }
+
+    public boolean isBookmarked(String id) {
+        Cursor cursor = this.database.query(DATA_TABLE, new String[]{FAVOURITE_FIELD}, ID_FIELD + "=? ", new String[]{id}, null, null, null);
+        if (cursor != null && cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            if (cursor.getString(cursor.getColumnIndex(FAVOURITE_FIELD)).equals("1")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean changeBookmarked(String id, int value) {
+        ContentValues values = new ContentValues();
+        values.put(FAVOURITE_FIELD, value);
+        if (this.database.update(DATA_TABLE, values, ID_FIELD + "=?", new String[]{id}) > 0) {
+            return true;
+        }
+        return false;
     }
 
 
-    private DB_Manager(Context context) {
+
+
+
+
+
+    public DB_Manager(Context context) {
         super(context, DB_NAME, null, 1);
         this.context = context;
         DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";

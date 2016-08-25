@@ -142,7 +142,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="About us"
+                android:text="About this App"
                 android:textSize="40sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/textPrimary" />

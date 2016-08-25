@@ -20,7 +20,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
   LinearLayout lay_allstories,lay_favourite,lay_videos,lay_about,lay_rate;
     TextView tv_allstories,tv_favourite,tv_videos,tv_about,tv_rate;
-
+    String category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         lay_videos=(LinearLayout)findViewById(R.id.lay_videos);
         lay_rate=(LinearLayout)findViewById(R.id.lay_rate);
         lay_about=(LinearLayout)findViewById(R.id.lay_about);
-
+        category=getIntent().getStringExtra("category");
         tv_allstories=(TextView)findViewById(R.id.tv_allstories);
         tv_favourite=(TextView)findViewById(R.id.tv_favstories);
         tv_videos=(TextView)findViewById(R.id.tv_horrorvideos);
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,Favourite_stories.class);
+                intent.putExtra("category",category);
                 startActivity(intent);
             }
         });

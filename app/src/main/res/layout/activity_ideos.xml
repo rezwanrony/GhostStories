@@ -19,5 +19,17 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/full_layout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:background="@drawable/background_ghost"
+            android:id="@+id/wv_videos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></WebView>
+    </LinearLayout>
 
 </RelativeLayout>
