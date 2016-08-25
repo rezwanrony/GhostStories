@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ghoststories" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ghoststory" vcs="Git" />
     <mapping directory="G:\dimiklab\GhostStories\ghoststory" vcs="Git" />
   </component>
 </project>
