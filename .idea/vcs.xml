@@ -3,8 +3,10 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/java/com/appracks/GhostStories" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ghoststories" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ghoststory" vcs="Git" />
+    <mapping directory="G:\dimiklab\GhostStories\Ghost" vcs="Git" />
     <mapping directory="G:\dimiklab\GhostStories\ghoststory" vcs="Git" />
   </component>
 </project>
